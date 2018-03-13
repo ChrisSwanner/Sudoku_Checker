@@ -5,7 +5,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jquery-3.2.1', 'jasmine'],
     files: [
-      'src/*.js',
+      'src/sudokuChecker.js',
       'spec/*spec.js'
     ],
     webpack: webpackConfig,

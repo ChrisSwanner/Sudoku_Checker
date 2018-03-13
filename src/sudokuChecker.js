@@ -25,8 +25,6 @@ export function arrayCheck(array) {
 return true;
 }
 
-
-
 export function Splitter(number) {
   var numberArray = ("" + number).split("");
   var i;
@@ -35,7 +33,6 @@ export function Splitter(number) {
 
   }
   return numberArray;
-
 }
 
 export function colArrayBuilder(rowArray) {
@@ -50,7 +47,7 @@ export function colArrayBuilder(rowArray) {
     var j;
   	var row = rowArray[i];
     for (j = 0; j < row.length; j++) {
-    	col[j].push(rowArray[i][j]);
+      col[j].push(rowArray[i][j]);
     }
   }
   return col;
