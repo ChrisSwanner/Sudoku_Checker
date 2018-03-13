@@ -1,8 +1,7 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
@@ -10,19 +9,19 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
   },
   plugins: [
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
-    new HtmlWebpackPlugin({
-      title: 'SudokuChecker',
-      template: './src/index.html',
-      inject: 'body'
-    })
-  ],
+   new HtmlWebpackPlugin({
+     title: 'Sudoku Checker',
+     template: './src/index.html',
+     inject: 'body'
+   })
+ ],
   module: {
     rules: [
       {
@@ -33,20 +32,10 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: "eslint-loader"
-      },
-      {
-        test: /\.js$/,
-        exclude: [
-          /node_modules/,
-          /spec/
-        ],
-        loader: "babel-loader",
-        options: {
-          presets: ['es2015']
-        }
+        // test: /\.js$/,
+        // exclude: [/node_modules/,
+        // /spec/],
+        // loader: "eslint-loader"
       }
     ]
   }

@@ -1,0 +1,10 @@
+body {
+  background-color: brown;
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+input {
+  color: black;
+}
